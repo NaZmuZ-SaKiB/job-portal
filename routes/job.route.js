@@ -12,7 +12,7 @@ router.get('/jobs/:id/apply',verifyToken, authorization("candidate"), controller
 router.post('/jobs', verifyToken, authorization("hiring-manager", "admin"),  controller.createJob)
 router.patch('/jobs/:id', verifyToken, authorization("hiring-manager", "admin"),  controller.updateJobById)
 
-router.get('/manager/jobs', verifyToken, authorization("hiring-manager"),  controller.findJobByManager)
+router.get('/manager/jobs', verifyToken, authorization("hiring-manager"),  controller.findJobsByManager)
 router.get('/manager/jobs/:id', verifyToken, authorization("hiring-manager"),  controller.findJobByManager)
 
 module.exports = router

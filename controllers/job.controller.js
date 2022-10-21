@@ -1,4 +1,4 @@
-const { createJobService, findJobByManagerService, updateJobByIdService, getAllJobsService, getJobByIdService, applyForJobService } = require("../services/job.service")
+const { createJobService, findJobByManagerService, updateJobByIdService, getAllJobsService, getJobByIdService, applyForJobService, findJobsByManagerService } = require("../services/job.service")
 
 exports.getAllJobs = async (req, res, next) => {
     try {
@@ -108,7 +108,7 @@ exports.createJob = async (req, res, next) => {
     }
 }
 
-exports.findJobByManager = async (req, res, next) => {
+exports.findJobsByManager = async (req, res, next) => {
     try {
         const jobs = await findJobsByManagerService(req.user.id)
 
