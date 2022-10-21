@@ -87,7 +87,7 @@ exports.applyForJob = async (req, res, next) => {
 exports.createJob = async (req, res, next) => {
     try {
         const jobInfo = req.body
-        if(!req.user.role === 'admin'){
+        if(!req.user.role == 'admin'){
             if(!req.body?.hiringManager){
                 jobInfo.hiringManager = req.user.id
             }
